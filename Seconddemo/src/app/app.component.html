@@ -1,0 +1,20 @@
+<h1>Hello World!</h1>
+<div>
+<input type="text" name="nm" [(ngModel)]="name">
+<input type="text" name="nm" [(ngModel)]="address">
+<input type="checkbox" name="hobbies" value="Reading" [(ngModel)]="h1" (change)="getVal($event)">Reading
+<input type="checkbox" name="hobbies" value="Biking" (change)="getVal($event)">Biking
+<input type="checkbox" name="hobbies" value="Playing" (change)="getVal($event)">Playing
+<button type="button" name="btn" (click)="changeFlag()">Click me</button>
+</div>
+
+<hr>
+
+<div [ngClass]="{myclass:flag ,myc1:flag1}">
+<h2>{{ name|uppercase }}------{{address}}------{{sal|currency}}</h2>
+<ul>
+  <li *ngFor="let h of hobbies">{{h}}</li>
+
+</ul>
+</div>
+<p *ngIf="flag" [innerHTML]="para"></p>
